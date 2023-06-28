@@ -1,13 +1,15 @@
-package web.config.DAO;
+package web.Dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
 @Component
-public class DaoCarsImpl implements DaoCars{
+public class CarDaoImp implements CarDao{
+
     private List<Car>listOfCars = new ArrayList<>();
 
     @Override
