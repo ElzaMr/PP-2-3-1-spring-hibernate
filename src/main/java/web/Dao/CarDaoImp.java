@@ -19,13 +19,6 @@ public class CarDaoImp implements CarDao{
         listOfCars.add(new Car("Niva",2,"Vladimir"));
     }
 
-    public static void main(String[] args) {
-        System.out.println(new CarDaoImp().getListOfCar(-5));
-
-    }
-
-
-
     @Override
     public List<Car> getListOfCar(int count) {
         if (count >= 5) {
