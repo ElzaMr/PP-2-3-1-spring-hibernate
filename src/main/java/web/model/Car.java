@@ -39,7 +39,7 @@ public class Car {
     }
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", series=" + series +
