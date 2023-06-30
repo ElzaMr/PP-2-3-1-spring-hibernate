@@ -13,14 +13,24 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<User> getAllUsers(){
+    public List<User> getAllUsers() {
         return entityManager.createQuery("from User ").getResultList();
+    }
+
+    @Override
+    public List<User> getUserById(int id) {////////////////////////////////////////////////////////
+        return getAllUsers().stream().filter(user -> user.getId() == id).toList();
+
+    }
+
+    public void save(User user) {
+        entityManager.persist(user);
     }
 
 }

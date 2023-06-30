@@ -12,16 +12,17 @@ public class User {
     private String name;
     @Column(name = "surname")
     private String surname;
-    @Column(name = "age")
-    private int age;
 
     public User() {
     }
 
-    public User(String name, String surname, int age) {
+    public User(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -40,21 +41,12 @@ public class User {
         this.surname = surname;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", age=" + age +
                 '}';
     }
 }
