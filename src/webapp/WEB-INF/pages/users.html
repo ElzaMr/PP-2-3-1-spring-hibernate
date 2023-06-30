@@ -23,10 +23,10 @@
         <td><h1>Series</h1></td>
         <td><h1>Owner</h1></td>
     </tr>
-    <tr th:each="car:${listOfCars}">
-        <td th:text="${car.getModel()}"></td>
-        <td th:text="${car.getSeries()}"></td>
-        <td th:text="${car.getOwner()}"></td>
+    <tr th:each="user:${listOfUsers}">
+        <td th:text="${user.getAge()}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getSurname()}"></td>
     </tr>
 </table>
 </body>
