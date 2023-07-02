@@ -1,8 +1,4 @@
 package web.Dao;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import web.model.User;
 
@@ -36,10 +32,6 @@ public class UserDaoImpl implements UserDao {
     }
     @Override
     public void update(User updatedUser){
-//        User oldUser = getUserById(id);//получили старого юзера по айди
-//        oldUser.setName(updatedUser.getName());
-//        oldUser.setSurname(updatedUser.getSurname());
-//        oldUser.setAge(updatedUser.getAge());
         entityManager.merge(updatedUser);
         entityManager.flush();
     }
