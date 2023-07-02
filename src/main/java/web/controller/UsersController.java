@@ -39,8 +39,9 @@ public class UsersController {
         userService.save(user);
         return "redirect:/users";
     }
-    @GetMapping("/update/{id}")
-    public String update(Model model,@PathVariable("id")int id) {
+    ////////////////////////////////////////////////////
+    @GetMapping("/{id}/update")
+    public String update(Model model,@PathVariable("id")Integer id) {
         model.addAttribute("user",userService.getUserById(id));
         return "update";
     }
