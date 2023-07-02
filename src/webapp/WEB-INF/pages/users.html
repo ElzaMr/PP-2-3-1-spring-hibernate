@@ -19,14 +19,16 @@
 <body>
 <table>
     <tr>
-        <td><h1>Model</h1></td>
-        <td><h1>Series</h1></td>
-        <td><h1>Owner</h1></td>
+        <td><h1>ID</h1></td>
+        <td><h1>Name</h1></td>
+        <td><h1>Surname</h1></td>
+        <td><h1>Age</h1></td>
     </tr>
     <tr th:each="user:${listOfUsers}">
-        <td th:text="${user.getAge()}"></td>
+        <td th:text="${user.getId()}"></td>
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getSurname()}"></td>
+        <td th:text="${user.getAge()}"></td>
     </tr>
 </table>
 </body>

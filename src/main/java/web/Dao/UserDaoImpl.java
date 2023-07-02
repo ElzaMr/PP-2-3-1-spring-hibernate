@@ -8,8 +8,8 @@ import web.model.User;
 
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -24,13 +24,27 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> getUserById(int id) {////////////////////////////////////////////////////////
-        return getAllUsers().stream().filter(user -> user.getId() == id).toList();
+    @SuppressWarnings("unchecked")
+    public User getUserById(int id) {
 
+       return entityManager.find(User.class,id);
     }
-
+    @Override
     public void save(User user) {
         entityManager.persist(user);
-    }
 
+    }
+    @Override
+    public void update(User updatedUser,int id){
+//        User oldUser = getUserById(id);//получили старого юзера по айди
+//        updatedUser=entityManager.merge(oldUser);
+//        oldUser.setName(updatedUser.getName());
+//        oldUser.setSurname(updatedUser.getSurname());
+//        oldUser.setAge(updatedUser.getAge());
+        entityManager.merge(updatedUser);
+        entityManager.flush();
+    }
+    public void delete(int id){
+        entityManager.remove(getUserById(id));
+    }
 }
