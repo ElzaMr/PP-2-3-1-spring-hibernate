@@ -35,13 +35,13 @@ public class UserDaoImpl implements UserDao {
 
     }
     @Override
-    public void update(User updatedUser,int id){
-        User oldUser = getUserById(id);//получили старого юзера по айди
-        oldUser.setName(updatedUser.getName());
-        oldUser.setSurname(updatedUser.getSurname());
-        oldUser.setAge(updatedUser.getAge());
-//        entityManager.merge(updatedUser);
-//        entityManager.flush();
+    public void update(User updatedUser){
+//        User oldUser = getUserById(id);//получили старого юзера по айди
+//        oldUser.setName(updatedUser.getName());
+//        oldUser.setSurname(updatedUser.getSurname());
+//        oldUser.setAge(updatedUser.getAge());
+        entityManager.merge(updatedUser);
+        entityManager.flush();
     }
     public void delete(int id){
         entityManager.remove(getUserById(id));

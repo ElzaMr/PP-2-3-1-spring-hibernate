@@ -39,21 +39,21 @@ public class UsersController {
         userService.save(user);
         return "redirect:/users";
     }
-    ////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     @GetMapping("/{id}/update")
     public String update(Model model,@PathVariable("id")Integer id) {
         model.addAttribute("user",userService.getUserById(id));
         return "update";
     }
     @PatchMapping ("/{id}")
-    public String update1(@ModelAttribute("user")User user, @PathVariable("id") int id){
-        userService.update(user,id);
+    public String update1(@ModelAttribute("user")User user){
+        userService.update(user);
         return "redirect:/users";
     }
 
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id")int id){
-        userService.delete(id);//находим юзера по айди закидываем его в метод
-        return "redirect:/users";
-    }
+//    @GetMapping("/delete/{id}")
+//    public String delete(@PathVariable("id")int id){
+//        userService.delete(id);//находим юзера по айди закидываем его в метод
+//        return "redirect:/users";
+//    }
 }
