@@ -29,7 +29,13 @@
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getSurname()}"></td>
         <td th:text="${user.getAge()}"></td>
+        <td><a th:href="@{/users/{id}/update(id=${user.getId()})}">update</a>
+        <td><a th:href="@{/users/delete/{id}(id=${user.getId()})}">delete</a>
+
+
+
     </tr>
 </table>
+<a href="users/new"><input type="button" value="Create new user"></a>
 </body>
 </html>

@@ -22,7 +22,7 @@ public class UsersController {
         return "users";
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/user/{id}")
     public String getUser(@PathVariable("id") int id, Model model) {
         User user = userService.getUserById(id);
         model.addAttribute("listOfUser", user);
