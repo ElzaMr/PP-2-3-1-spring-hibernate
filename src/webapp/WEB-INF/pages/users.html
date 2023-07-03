@@ -11,6 +11,7 @@
         border-collapse: collapse;
         width: 100%;
     }
+
     td {
         border: 1px solid grey;
     }
@@ -31,9 +32,6 @@
         <td th:text="${user.getAge()}"></td>
         <td><a th:href="@{/users/{id}/update(id=${user.getId()})}">update</a>
         <td><a th:href="@{/users/delete/{id}(id=${user.getId()})}">delete</a>
-
-
-
     </tr>
 </table>
 <a href="users/new"><input type="button" value="Create new user"></a>
